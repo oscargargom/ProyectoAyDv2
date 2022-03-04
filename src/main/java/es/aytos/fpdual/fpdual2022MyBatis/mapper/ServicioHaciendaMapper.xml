@@ -1,0 +1,26 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="es.aytos.fpdual.fpdual2022MyBatis.mapper.ServicioHaciendaMapper">
+   
+
+    <sql id="sqlCiudadano">
+        SELECT id,
+               documento,
+               nombreCompleto,
+               direccion,
+               movil
+        FROM CIUDADANOS
+    </sql>
+
+    <select id="consultarCiudadanos" resultType="es.aytos.fpdual.fpdual2022MyBatis.modelo.Ciudadano">
+        <!-- <include refid="sqlCiudadano"/> -->
+        SELECT id,
+               nombre,
+               direccion,
+               facturacionAnual,
+               paisResidencia,
+               diasPermanencia
+        FROM CIUDADANOS
+        ORDER BY id
+    </select>
+ 
+</mapper>
